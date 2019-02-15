@@ -64,11 +64,11 @@ int main(void) {
 
     if (count > 0) {
         puts("Here is the list of your books:");
-        for (index = 0; index < count; ++index) {
+        for (index = 0; index < count; index++) {
             printf("%s by %s: $%.2f\n", library[index].title,
                    library[index].author, library[index].value);
-            fwrite(&library[filecount], size, count - filecount, pbooks);
         }
+        fwrite(&library[filecount], size, count - filecount, pbooks);
     } else
         puts("No books? Too bad.\n");
 
